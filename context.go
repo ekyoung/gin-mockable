@@ -14,6 +14,7 @@ type Context interface {
 	AbortWithError(code int, err error) *gin.Error
 	GetRequest() *http.Request
 	SetCookie(name, value string, maxAge int, path, domain string, secure, httpOnly bool)
+	Redirect(code int, location string)
 }
 
 type extendedGinContext struct {
