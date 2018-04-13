@@ -13,6 +13,7 @@ type Context interface {
 	Query(key string) string
 	AbortWithError(code int, err error) *gin.Error
 	GetRequest() *http.Request
+	SetCookie(name, value string, maxAge int, path, domain string, secure, httpOnly bool)
 }
 
 type extendedGinContext struct {
