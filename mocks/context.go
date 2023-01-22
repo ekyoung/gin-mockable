@@ -39,6 +39,10 @@ func (m *Context) GetRequest() *http.Request {
 	return ret.Get(0).(*http.Request)
 }
 
+func (m *Context) SetCookie(name, value string, maxAge int, path, domain string, secure, httpOnly bool) {
+	m.Called(name, value, maxAge, path, domain, secure, httpOnly)
+}
+
 func (m *Context) Redirect(code int, location string) {
 	m.Called(code, location)
 }
