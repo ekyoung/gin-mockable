@@ -40,5 +40,5 @@ func (m *Context) GetRequest() *http.Request {
 }
 
 func (m *Context) Redirect(code int, location string) {
-	ret := m.Called(code, location)
+	m.Called(code, location)
 }
