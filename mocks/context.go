@@ -38,3 +38,7 @@ func (m *Context) GetRequest() *http.Request {
 	ret := m.Called()
 	return ret.Get(0).(*http.Request)
 }
+
+func (m *Context) Redirect(code int, location string) {
+	ret := m.Called(code, location)
+}
